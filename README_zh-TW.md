@@ -2,9 +2,9 @@
 
 > From Shell to Plate: Savor the Zest of Fish 🦞
 
-歡迎閱讀《Fish 食譜》，完全釋放 Fish 殼層腳本潛力的終極指南。Fish 憑藉著它友善且方便的功能脫穎而出，成為殼層中的明珠。
+歡迎閱讀《Fish 食譜》，完全釋放 Fish 外殼腳本潛力的終極指南。Fish 憑藉著它友善且方便的功能脫穎而出，成為外殼中的明珠。
 
-無論是經驗豐富的「大廚」，或是殼層腳本的菜鳥，都能透過我們精選的 Fish「料理配方」來掌握程式設計挑戰，輕鬆閱讀程式碼。
+無論是經驗豐富的「大廚」，或是外殼腳本的菜鳥，都能透過我們精選的 Fish「料理配方」來掌握程式設計挑戰，輕鬆閱讀程式碼。
 
 這本食譜以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0) 授權，以確保知識與靈感流通，同時尊重他人的權利。
 
@@ -12,7 +12,7 @@
 
 - [揚帆啟航](#%E6%8F%9A%E5%B8%86%E5%95%9F%E8%88%AA)
   - [怎麼安裝 Fish？](#%E6%80%8E%E9%BA%BC%E5%AE%89%E8%A3%9D-fish)
-  - [讓 Fish 成為你的預設殼層，Ahoy！](#%E8%AE%93-fish-%E6%88%90%E7%82%BA%E4%BD%A0%E7%9A%84%E9%A0%90%E8%A8%AD%E6%AE%BC%E5%B1%A4ahoy)
+  - [讓 Fish 成為你的預設外殼，Ahoy！](#%E8%AE%93-fish-%E6%88%90%E7%82%BA%E4%BD%A0%E7%9A%84%E9%A0%90%E8%A8%AD%E6%AE%BC%E5%B1%A4ahoy)
   - [尋找 Fish 的安裝位置](#%E5%B0%8B%E6%89%BE-fish-%E7%9A%84%E5%AE%89%E8%A3%9D%E4%BD%8D%E7%BD%AE)
   - [尋求幫助之處](#%E5%B0%8B%E6%B1%82%E5%B9%AB%E5%8A%A9%E4%B9%8B%E8%99%95)
 - [基礎](#%E5%9F%BA%E7%A4%8E)
@@ -151,9 +151,9 @@ make && sudo make install
 
 安裝好 Fish 後，驚心動魄的旅程就在不遠處了，快準備好探索命令列、挖掘 Fish 的核心寶藏與秘密。敬豐收和喜悅，乾杯！🍻
 
-### 讓 Fish 成為你的預設殼層，Ahoy！
+### 讓 Fish 成為你的預設外殼，Ahoy！
 
-只要 Fish 安裝到你的 `$PATH` 了，例如到 `/usr/local/bin`，你可以將其設為預設殼層，以一帆風順地體驗命令列。
+只要 Fish 安裝到你的 `$PATH` 了，例如到 `/usr/local/bin`，你可以將其設為預設外殼，以一帆風順地體驗命令列。
 
 ```fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
@@ -278,7 +278,7 @@ ls $PATH | column | less
 
 在 Fish 行程剛開始的環境初始化時會創建 `$PATH` 變數，你可以在 `~/.config/fish/config.fish` 中修改。
 
-除了內建命令 `type`、`builtin`、`functions`，\*nix 作業系統通常還有一些殼層無關的命令如 `which`、`apropos`、`whatis` 等。
+除了內建命令 `type`、`builtin`、`functions`，\*nix 作業系統通常還有一些外殼無關的命令如 `which`、`apropos`、`whatis` 等。
 
 這些命令有些相同的功能，但也有不同之處。詳情請見你系統的手冊頁。
 
@@ -317,7 +317,7 @@ echo $pipestatus
 
 ### Fish Shebang 是什麼？讓腳本可以被執行
 
-[shebang](https://zh.wikipedia.org/zh-tw/Shebang) 是一種特殊的註解，用以告訴殼層使用特定程式執行腳本。
+[shebang](https://zh.wikipedia.org/zh-tw/Shebang) 是一種特殊的註解，用以告訴外殼使用特定程式執行腳本。
 
 要預設使用 `fish` 執行腳本，將 shebang 加到檔案的第一行：
 
@@ -586,7 +586,7 @@ end
 
 如果你的 `~/.config/fish/functions/foo.fish` 包含有效的函式 `bar`：
 
-1. 在新的殼層中，嘗試執行 `bar` 會導致未知命令的錯誤。
+1. 在新的外殼中，嘗試執行 `bar` 會導致未知命令的錯誤。
 2. 輸入 `foo` 會高亮為一個有效的命令，但會導致未知命令的錯誤。
 3. 再試一次 `bar`，現在它可以運作了，就像魔法一樣。
 
@@ -801,7 +801,7 @@ alias -s ...
 
 ### 在 `config.fish` 中定義別名的問題
 
-在 `~/.config/fish/config.fish` 中定義別名會使殼層需要花更多時間啟動，因為所有別名（函式）都將在啟動時就載入。
+在 `~/.config/fish/config.fish` 中定義別名會使外殼需要花更多時間啟動，因為所有別名（函式）都將在啟動時就載入。
 
 如果要在會話間保留別名，應該用 `alias -s`，來創建一個函式並儲存其至 `~/.config/fish/functions`。如此一來，便能利用 Fish 的函式[惰性載入／自動載入](https://fishshell.com/docs/current/tutorial.html#autoloading-functions)機制。
 
@@ -959,11 +959,11 @@ wait (get_jobs)
 
 以下是在《Fish 食譜》中提到的術語與概念表：
 
-- **Fish**：Fish，「Friendly Interactive Shell」（友善互動式殼層）的縮寫，一個類 Unix 作業系統的命令列殼層。以使用者友善的功能、語法高亮、自動建議、強大的腳本能力等聞名。
+- **Fish**：Fish，「Friendly Interactive Shell」（友善互動式外殼）的縮寫，一個類 Unix 作業系統的命令列外殼。以使用者友善的功能、語法高亮、自動建議、強大的腳本能力等聞名。
 
 - **安裝 Fish**：包括在你的系統上獲取 Fish 並設置好的安裝過程。你可以用套件管理器安裝，或從原始碼建置。
 
-- **預設殼層**：預設殼層會在你開啟終端或登入到系統時自動啟動。將 Fish 設為你的預設殼層可確保你預設會和 Fish 互動。
+- **預設外殼**：預設外殼會在你開啟終端或登入到系統時自動啟動。將 Fish 設為你的預設外殼可確保你預設會和 Fish 互動。
 
 - **Fish 組態**：Fish 組態包括自訂 Fish 的行為和外觀。組態可以在 `config.fish` 中設定，該檔案會在 Fish 啟動時載入。
 
@@ -971,7 +971,7 @@ wait (get_jobs)
 
 - **函式**：函式能夠用一個名稱將一串命令統整起來。函式可以用 `function` 關鍵字定義，並用其名稱呼叫。
 
-- **IO（Input/Output，輸入／輸出）**：IO 指殼層的輸入和輸出操作。Fish 提供了多個命令和技巧用以讀取檔案、重導向輸出、和處理輸入流。
+- **IO（Input/Output，輸入／輸出）**：IO 指外殼的輸入和輸出操作。Fish 提供了多個命令和技巧用以讀取檔案、重導向輸出、和處理輸入流。
 
 - **並行**：並行指同時有多個命令或工作在執行。Fish 允許你在背景執行命令、檢查背景作業的狀態、同步工作、等待背景行程結束。
 
